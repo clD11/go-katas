@@ -1,7 +1,7 @@
 package gokatas
 
 var arabicRomanPairs = []struct {
-	in int
+	in  int
 	out string
 }{
 	{1000, "M"},
@@ -11,7 +11,7 @@ var arabicRomanPairs = []struct {
 	{50, "L"},
 	{40, "XL"},
 	{10, "X"},
-	{9,"IX"},
+	{9, "IX"},
 	{5, "V"},
 	{4, "IV"},
 	{1, "I"},
@@ -24,6 +24,11 @@ func ConvertArabicToRomanNumeral(arabic int) string {
 			roman += pair.out
 			arabic -= pair.in
 		}
+
+		if arabic < 1 {
+			break
+		}
 	}
+
 	return roman
 }
