@@ -3,17 +3,7 @@ package gokatas
 import (
 	"strings"
 	"strconv"
-	"bufio"
-	"os"
-	"fmt"
 )
-
-func main() {
-	reader := bufio.NewReader(os.Stdin)
-	reader.ReadString('\n')	
-	input, _ := reader.ReadString('\n')
-	fmt.Print(Sum(input))
-}
 
 func Sum(input string) int64 {	
 	summable := strings.Split(input, " ")
