@@ -1,9 +1,9 @@
-package gokatas
+package various
 
 import "testing"
 
 var arabicRomanPairsTest = []struct {
-	in int
+	in  int
 	out string
 }{
 	{1, "I"},

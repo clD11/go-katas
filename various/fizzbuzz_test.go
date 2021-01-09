@@ -1,17 +1,17 @@
-package gokatas
+package various
 
 import (
 	"testing"
 )
 
 var testData = []struct {
-	in int
+	in  int
 	out string
 }{
-	{1,"1"},
-	{2,"2"},
-	{3,"Fizz"},
-	{5,"Buzz"},
+	{1, "1"},
+	{2, "2"},
+	{3, "Fizz"},
+	{5, "Buzz"},
 	{15, "FizzBuzz"},
 	{25, "Buzz"},
 	{30, "FizzBuzz"},
@@ -28,7 +28,3 @@ func TestFizzBuzzShouldReturnFizzBuzz(t *testing.T) {
 		}
 	}
 }
-
-
-
-

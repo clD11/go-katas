@@ -1,4 +1,4 @@
-package gokatas
+package various
 
 var arabicRomanPairs = []struct {
 	in  int
