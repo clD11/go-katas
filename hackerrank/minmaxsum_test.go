@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func testCalculateMinMaxSum(t *testing.T) {
+func TestCalculateMinMaxSum(t *testing.T) {
 	input := []float64{1, 2, 3, 4, 5}
 
 	expected := "10 14"
