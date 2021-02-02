@@ -1,7 +1,7 @@
 package scheduler_test
 
 import (
-	"github.com/clD11/go-katas/scheduler"
+	"github.com/clD11/go-katas/src/scheduler"
 	"reflect"
 	"testing"
 )
