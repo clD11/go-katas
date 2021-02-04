@@ -1,9 +1,22 @@
 package hackerrank
 
-const baseDays = 215
+import (
+	"fmt"
+)
+
+const baseDays = 243
 
 func DayOfTheProgrammer(year int32) string {
-	return "12.09.2016"
+	day := baseDays
+
+	if isLeapYear(year) {
+		day += 1
+	}
+	if year == 1918 {
+		day -= 13
+	}
+
+	return fmt.Sprintf("%d.09.%d", 256-day, year)
 }
 
 func isLeapYear(year int32) bool {
