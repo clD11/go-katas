@@ -31,9 +31,3 @@ func TestReturnHeightForCycle5(t *testing.T) {
 	expected := int32(14)
 	assertThat(t, actual, expected)
 }
-
-func assertThat(t *testing.T, actual int32, expected int32) {
-	if actual != expected {
-		t.Errorf("expected %d actual %d", expected, actual)
-	}
-}
