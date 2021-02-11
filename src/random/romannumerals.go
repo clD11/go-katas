@@ -1,4 +1,4 @@
-package various
+package random
 
 var arabicRomanPairs = []struct {
 	in  int

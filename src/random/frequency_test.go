@@ -1,4 +1,4 @@
-package various
+package random
 
 import (
 	"reflect"
