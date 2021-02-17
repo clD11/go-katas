@@ -4,9 +4,9 @@ import (
 	"sort"
 )
 
-// Could use n(n+1)/2 but wheres the fun in that
+// Could use n(n+1)/2
 
-func find(input []int32) int32 {
+func findMissingNumber(input []int32) int32 {
 	sort.Slice(input, func(i, j int) bool {
 		return input[i] < input[j]
 	})
