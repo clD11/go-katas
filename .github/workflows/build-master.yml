@@ -18,7 +18,8 @@ jobs:
         with:
           go-version: '1.15'
 
-      name: run tests
-      run: go version
-      run: go clean
-      run: go test ./...
+      - name: run tests
+        run: |
+          go version
+          go clean
+          go test ./...
