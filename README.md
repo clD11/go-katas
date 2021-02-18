@@ -1,4 +1,4 @@
-![master build](https://github.com/clD11/go-katas/workflows/build-master/badge.svg?branch=master)
+![build-master](https://github.com/clD11/go-katas/workflows/build-master/badge.svg?branch=master)
 
 # Programming Challenges
 
