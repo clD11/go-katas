@@ -1,5 +1,4 @@
 name: build-master
-description: compiles and tests master branch on change
 
 on:
   push:
