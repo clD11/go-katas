@@ -11,5 +11,9 @@ func SumDiagonalDifference(arr [][]int) int {
 		DR = DR + arr[i][L-i-1]
 	}
 
-	return DL - DR
+	result := DL - DR
+	if result < 0 {
+		result *= -1
+	}
+	return result
 }
