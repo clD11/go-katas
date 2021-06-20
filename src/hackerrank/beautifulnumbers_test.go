@@ -44,6 +44,13 @@ func TestFindBeautiful_NoZeros(t *testing.T) {
 	assertBeauty(t, actual, expected)
 }
 
+func TestFindBeautiful_Mix(t *testing.T) {
+	input := "7891011"
+	expected := "YES 7"
+	actual := findBeautifulNumber(input)
+	assertBeauty(t, actual, expected)
+}
+
 func assertBeauty(t *testing.T, actual, expected string) {
 	if actual != expected {
 		t.Errorf("expected %s actual %s", expected, actual)
