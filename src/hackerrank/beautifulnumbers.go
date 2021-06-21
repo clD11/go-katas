@@ -14,10 +14,10 @@ func findBeautifulNumber(input string) string {
 	for {
 		num, _ := strconv.Atoi(input[startIndex:endIndex])
 		target := strconv.Itoa(num + 1)
-		nextValue := strings.Index(input, target)
+		nextValue := strings.Index(input[startIndex:], target)
 
-		if nextValue == endIndex {
-			startIndex = nextValue
+		if nextValue+startIndex == endIndex {
+			startIndex = nextValue + startIndex
 			endIndex = startIndex + len(target)
 		} else {
 			digits += 1
