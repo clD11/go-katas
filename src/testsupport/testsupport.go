@@ -16,3 +16,9 @@ func AssertThatArrInt32(t *testing.T, actual []int32, expected []int32) {
 		t.Errorf("expected %d actual %d", expected, actual)
 	}
 }
+
+func AssertThatString(t *testing.T, actual, expected string) {
+	if actual != expected {
+		t.Errorf("expected %s actual %s", expected, actual)
+	}
+}
