@@ -5,6 +5,12 @@ import (
 	"testing"
 )
 
+func AssertThatInt(t *testing.T, actual int, expected int) {
+	if actual != expected {
+		t.Errorf("expected %d actual %d", expected, actual)
+	}
+}
+
 func AssertThatInt32(t *testing.T, actual int32, expected int32) {
 	if actual != expected {
 		t.Errorf("expected %d actual %d", expected, actual)
