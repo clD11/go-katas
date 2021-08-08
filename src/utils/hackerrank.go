@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"testing"
 )
 
 func readLines() {
@@ -16,4 +17,26 @@ func readLines() {
 		value := strings.Trim(scanner.Text(), "\n\t")
 		fmt.Println(value)
 	}
+}
+
+func ReadLines(t *testing.T, filepath string, numLines int) []string {
+	t.Helper()
+
+	reader, err := os.Open(filepath)
+	defer reader.Close()
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	scan := bufio.NewScanner(reader)
+
+	lines := make([]string, 0, numLines)
+	for i := 0; i < numLines; i++ {
+		scan.Scan()
+		text := scan.Text()
+		lines = append(lines, text)
+	}
+
+	return lines
 }
