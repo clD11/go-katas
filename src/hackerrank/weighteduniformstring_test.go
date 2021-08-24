@@ -2,6 +2,7 @@ package hackerrank
 
 import (
 	"bufio"
+	"fmt"
 	"github.com/clD11/go-katas/src/testsupport"
 	"log"
 	"os"
@@ -83,7 +84,7 @@ func TestWeightedUniformStrings_A(t *testing.T) {
 	s := "aaazzzzaa"
 	queries := []int32{12}
 	actual := WeightedUniformStrings(s, queries)
-	expected := []string{"Yes"}
+	expected := []string{"No"}
 	for i := 0; i < len(queries); i++ {
 		testsupport.AssertThatString(t, actual[i], expected[i])
 	}
@@ -118,11 +119,18 @@ func TestWeightedUniformStrings_Long(t *testing.T) {
 
 	res := WeightedUniformStrings(l, queries)
 
+	actual := make([]string, 0, 0)
 	for i := 0; i < q; i++ {
 		s.Scan()
 		r := s.Text()
 		if r != res[i] {
-			log.Printf("exp %s act %s query %d", r, res[i], queries[i])
+			actual = append(actual, fmt.Sprintf("exp %s act %s query %d", r, res[i], queries[i]))
 		}
+	}
+
+	if len(actual) > 0 {
+		log.Print(actual)
+		// assert fail
+		testsupport.AssertThatInt(t, 0, 1)
 	}
 }
