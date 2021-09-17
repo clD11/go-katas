@@ -28,3 +28,15 @@ func AssertThatString(t *testing.T, actual, expected string) {
 		t.Errorf("expected %s actual %s", expected, actual)
 	}
 }
+
+func AssertTrue(t *testing.T, value bool) {
+	if !value {
+		t.Errorf("expected true got false")
+	}
+}
+
+func AssertFalse(t *testing.T, value bool) {
+	if value {
+		t.Errorf("expected false got true")
+	}
+}
