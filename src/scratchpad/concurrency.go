@@ -5,6 +5,15 @@ import (
 	"sync/atomic"
 )
 
+type Mutant struct {
+	name    string
+	version int
+}
+
+func (m Mutant) Version(i int) {
+	m.version += 1
+}
+
 func GoRoutineChannelStop() {
 	q := make(chan bool)
 	go func(msg string) {
