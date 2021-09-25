@@ -15,6 +15,7 @@ import "log"
 // Preorder
 
 // left -> root -> right
+// output = 1,2,3,4,5
 func InorderTraversal(node *Node) {
 	s := newStack()
 	s.Push(node)
@@ -45,6 +46,40 @@ func InorderTraversal(node *Node) {
 
 		current = current.right
 	}
+}
+
+// Left -> Right -> Root
+// output = 1,3,2,5,4
+func PostOrderTraversal(node *Node) {
+	s1 := newStack()
+	s2 := newStack()
+
+	s1.Push(node)
+
+	var temp *Node
+
+	for {
+		if s1.Len() == 0 {
+			break
+		}
+		temp = s1.Pop()
+		s2.Push(temp)
+
+		if temp.left != nil {
+			s1.Push(temp.left)
+		}
+		if temp.right != nil {
+			s1.Push(temp.right)
+		}
+	}
+
+	for {
+		if s2.isEmpty() {
+			break
+		}
+		log.Print(s2.Pop().value)
+	}
+
 }
 
 // ** NOTES **
