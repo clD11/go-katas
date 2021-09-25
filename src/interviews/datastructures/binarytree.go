@@ -10,9 +10,11 @@ import "log"
 //		2		5
 //	1		3
 
-// All recursion is simpy using stack and values so can be converted to iteration -
-// lambda calculus (rec) vs turing machine (iter) -> church-turing thesis
+// Inorder
+// Postorder
+// Preorder
 
+// left -> root -> right
 func InorderTraversal(node *Node) {
 	s := newStack()
 	s.Push(node)
@@ -44,3 +46,7 @@ func InorderTraversal(node *Node) {
 		current = current.right
 	}
 }
+
+// ** NOTES **
+// All recursion is simpy using stack and values so can be converted to iteration and is simpler for interviews -
+// lambda calculus (rec) vs turing machine (iter) -> church-turing thesis
