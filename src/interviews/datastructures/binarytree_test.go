@@ -51,5 +51,30 @@ func TestPostOrderTraversal(t *testing.T) {
 			right: nil,
 		},
 	}
-	PostOrderTraversal(binarySearchTree)
+	PostorderTraversal(binarySearchTree)
+}
+
+func TestPreOrderTraversal(t *testing.T) {
+	binarySearchTree := &Node{
+		value: 4,
+		left: &Node{
+			value: 2,
+			left: &Node{
+				value: 1,
+				left:  nil,
+				right: nil,
+			},
+			right: &Node{
+				value: 3,
+				left:  nil,
+				right: nil,
+			},
+		},
+		right: &Node{
+			value: 5,
+			left:  nil,
+			right: nil,
+		},
+	}
+	PreorderTraversal(binarySearchTree)
 }

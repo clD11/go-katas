@@ -50,7 +50,7 @@ func InorderTraversal(node *Node) {
 
 // Left -> Right -> Root
 // output = 1,3,2,5,4
-func PostOrderTraversal(node *Node) {
+func PostorderTraversal(node *Node) {
 	s1 := newStack()
 	s2 := newStack()
 
@@ -80,6 +80,40 @@ func PostOrderTraversal(node *Node) {
 		log.Print(s2.Pop().value)
 	}
 
+}
+
+// root -> left -> right
+func PreorderTraversal(node *Node) {
+	for {
+		if node == nil {
+			break
+		}
+
+		if node.left == nil {
+			log.Print(node.value)
+			node = node.right
+		} else {
+			c := node.left
+
+			for {
+				if c.right != nil && c.right != node {
+					c = c.right
+				} else {
+					break
+				}
+			}
+
+			if c.right == node {
+				c.right = nil
+				node = node.right
+			} else {
+				log.Print(node.value)
+				c.right = node
+				node = node.left
+			}
+		}
+
+	}
 }
 
 // ** NOTES **
