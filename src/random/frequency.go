@@ -8,6 +8,39 @@ import (
 	"strings"
 )
 
+type Blog struct {
+	title string
+	like  bool
+}
+
+func Frequency(input []Blog, n int) []string {
+	freq := make(map[string]int)
+	for _, b := range input {
+		if b.like {
+			freq[b.title] += 1
+		}
+	}
+
+	rev := make(map[int]string)
+	for k, v := range freq {
+		rev[v] = k
+	}
+
+	s := make([]int, 0)
+	for k, _ := range rev {
+		s = append(s, k)
+	}
+	sort.Ints(s)
+
+	var r = make([]string, 0, n)
+	for i := len(s) - 1; i > -1 && n > 0; i-- {
+		r = append(r, rev[s[i]])
+		n--
+	}
+
+	return r
+}
+
 func GetPlayerFrequency(filename string, players int) []string {
 	f, err := os.Open(filename)
 	check(err)
