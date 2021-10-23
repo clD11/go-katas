@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestInOrderTraversal(t *testing.T) {
+func TestInorderTraversal(t *testing.T) {
 	binarySearchTree := &Node{
 		value: 4,
 		left: &Node{
@@ -29,7 +29,7 @@ func TestInOrderTraversal(t *testing.T) {
 	InorderTraversal(binarySearchTree)
 }
 
-func TestPostOrderTraversal(t *testing.T) {
+func TestPostorderTraversal(t *testing.T) {
 	binarySearchTree := &Node{
 		value: 4,
 		left: &Node{
@@ -54,7 +54,7 @@ func TestPostOrderTraversal(t *testing.T) {
 	PostorderTraversal(binarySearchTree)
 }
 
-func TestPreOrderTraversal(t *testing.T) {
+func TestPreorderTraversal(t *testing.T) {
 	binarySearchTree := &Node{
 		value: 4,
 		left: &Node{

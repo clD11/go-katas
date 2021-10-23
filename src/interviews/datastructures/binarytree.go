@@ -9,6 +9,20 @@ import "log"
 //		2		5
 //	1		3
 
+// Operations
+
+func Insert(node *Node) {
+
+}
+
+func Delete(node *Node) {
+
+}
+
+func Search(node *Node) {
+
+}
+
 // Traversal (stack)
 
 // Inorder (Left, Root, Right): 1,2,3,4,5
@@ -18,7 +32,7 @@ func InorderTraversal(node *Node) {
 
 	current := node
 
-	for { // controls right
+	for {
 		if s.Len() == 0 {
 			break
 		}
@@ -32,7 +46,7 @@ func InorderTraversal(node *Node) {
 			current = current.left
 		}
 
-		// back track and go right (if right has a left then loop above goes down left again until all nodes are visited)
+		// back track and go right (if right has a left then loop above goes down left and so on until all nodes are visited)
 		current = s.Pop()
 
 		// testing only isEmpty stop root being printed twice
@@ -44,7 +58,27 @@ func InorderTraversal(node *Node) {
 	}
 }
 
-// Left -> Right -> Root
+// Preorder (Root, Left, Right): 4,2,1,3,5
+func PreorderTraversal(node *Node) {
+	s := newStack()
+	s.Push(node)
+
+	for {
+		if s.isEmpty() {
+			break
+		}
+		current := s.Pop()
+		log.Print(current.value)
+
+		if current.right != nil {
+			s.Push(current.right)
+		}
+		if current.left != nil {
+			s.Push(current.left)
+		}
+	}
+}
+
 // Postorder (Left, Right, Root): 1,3,2,5,4
 func PostorderTraversal(node *Node) {
 	s1 := newStack()
